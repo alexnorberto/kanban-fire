@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kanban-fire-1dc60": {
+      "hosting": {
+        "kanban-fire": [
+          "kanban-fire-1dc60"
+        ]
+      }
+    }
+  }
+}

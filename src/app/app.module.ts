@@ -15,6 +15,10 @@ import { TaskDialogComponent } from './components/task-dialog/task-dialog.compon
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,10 @@ import {MatInputModule} from '@angular/material/input';
     DragDropModule,
     FormsModule,
     MatToolbarModule, MatIconModule, MatCardModule, MatButtonModule, BrowserAnimationsModule, MatDialogModule,
-    MatFormFieldModule, MatInputModule
+    MatFormFieldModule, MatInputModule,
+
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

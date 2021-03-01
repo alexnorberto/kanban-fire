@@ -1,37 +1,37 @@
 <mat-toolbar color="primary">
-  <mat-icon>local_fire_department</mat-icon>
-  <span>KanbanFire</span>
+  <mat-icon>health_and_safety</mat-icon>
+  <span>Regional Hospital - Kanban</span>
 </mat-toolbar>
 
 <div class="content-wrapper">
 
-  <button mat-flat-button (click)="newTask()">
-    <mat-icon>add</mat-icon>Add Task
+  <button mat-stroked-button color="primary"(click)="newTask()">
+    <mat-icon>add</mat-icon>Add Patient
   </button>
 
   <div class="container-wrapper">
     
-    <div class="container">
-      <h2>Backlog</h2>
-      <mat-card cdkDropList id="todo" #todoList="cdkDropList"
+    <div class="container" >
+      <h2>Low Priority - Green</h2>
+      <mat-card cdkDropList id="todo" #todoList="cdkDropList" style="background-color: rgb(204, 255, 204);"
         [cdkDropListData]="todo" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[inProgressList,doneList]">
         <p class="empty-label" *ngIf="todo.length == 0">Empty List</p>
         <app-task cdkDrag *ngFor="let task of todo" [task]="task" (edit)="edit('todo',$event)"></app-task>
       </mat-card>
     </div>
 
-    <div class="container">
-      <h2>In Progress</h2>
-      <mat-card cdkDropList id="inProgress" #inProgressList="cdkDropList"
+    <div class="container" >
+      <h2>Medium Priority - Yellow</h2>
+      <mat-card cdkDropList id="inProgress" #inProgressList="cdkDropList" style="background-color: rgb(255, 250, 177);"
       [cdkDropListData]="inProgress" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[doneList,todoList]">
       <p class="empty-label" *ngIf="inProgress.length == 0">Empty List</p>
       <app-task cdkDrag *ngFor="let task of inProgress" [task]="task" (edit)="edit('inProgress',$event)"></app-task>
     </mat-card>
     </div>
 
-    <div class="container">
-      <h2>Done</h2>
-      <mat-card cdkDropList id="done" #doneList="cdkDropList"
+    <div class="container" >
+      <h2>High Priority - Red</h2>
+      <mat-card cdkDropList id="done" #doneList="cdkDropList" style="background-color: rgb(255, 191, 191);"
       [cdkDropListData]="done" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[inProgressList,todoList]">
       <p class="empty-label" *ngIf="done.length == 0">Empty List</p>
       <app-task cdkDrag *ngFor="let task of done" [task]="task" (edit)="edit('done',$event)"></app-task>

@@ -13,9 +13,9 @@ export class AppComponent {
   title = 'kanban-fire';
 
   todo: Task[] = [
-    { title: "task1", description:"description task1"},
-    { title: "task2", description:"description task2"},
-    { title: "task2", description:"description task2"}
+    { title: "Joseph Smith", description:"heart attack"},
+    { title: "Mary Hill", description:"COVID-19"},
+    { title: "John Snow", description:"broken finger"}
   ];
   inProgress: Task[]=[];
   done: Task[]=[];

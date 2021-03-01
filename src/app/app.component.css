@@ -14,11 +14,22 @@ mat-toolbar > span {
 .container-wrapper {
     display: flex;
     justify-content: space-around;
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+    .container-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .container {
     width: 400px;
     margin: 0 25px 25px 0;
+    text-align: center;
 }
 
 .list {
